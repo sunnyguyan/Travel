@@ -4,10 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import fastClick from 'fastclick' //移动端click300毫秒执行
+//样式重置
+import 'styles/reset.css'
+//引入iconfont
+import 'styles/iconfont.css'
 
-import './assets/styles/reset.css'
 //1像素边框问题
-import './assets/styles/border.css'
+import 'styles/border.css'
+
 
 fastClick.attach(document.body)
 
