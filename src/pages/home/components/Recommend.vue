@@ -4,7 +4,7 @@
       热销推荐
   </div>
   <ul>
-      <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item in list" :key="item.id">
             <img class="item-img" :src="item.imgUrl"></img>
          <div class="item-info">
              <p class="item-title">{{item.title}}</p>
@@ -19,34 +19,11 @@
 <script>
 export default {
   name:"HomeRecommend",
+  props:{
+      list:Array
+  },
   data () {
     return {
-        recommendList:[{
-            id:"0001",
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1805/ca/ca11017f163d32cea3.water.jpg_200x200_3030aa94.jpg',
-            title:'南京万达主题乐园',
-            desc:'南京特色'
-        },{
-            id:"0002",
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1805/ca/ca11017f163d32cea3.water.jpg_200x200_3030aa94.jpg',
-            title:'南京万达主题乐园',
-            desc:'南京特色'
-        },{
-            id:"0003",
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1805/ca/ca11017f163d32cea3.water.jpg_200x200_3030aa94.jpg',
-            title:'南京万达主题乐园',
-            desc:'南京特色'
-        },{
-            id:"0004",
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1805/ca/ca11017f163d32cea3.water.jpg_200x200_3030aa94.jpg',
-            title:'南京万达主题乐园',
-            desc:'南京特色'
-        },{
-            id:"0005",
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1805/ca/ca11017f163d32cea3.water.jpg_200x200_3030aa94.jpg',
-            title:'南京万达主题乐园',
-            desc:'南京特色'
-        }]
     };
   },
 
@@ -79,7 +56,12 @@ export default {
           line-height:.4rem
           color:#ccc
           ellpsis()
-
+        .item-button
+          line-height:.44rem
+          margin-top:.16rem
+          background:#ff9300
+          padding:0 .1rem
+          border-radius: .06rem
 
 
 
