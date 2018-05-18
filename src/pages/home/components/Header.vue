@@ -9,7 +9,7 @@
     </div>
  <router-link  to="/city">
   <div  class="header-right">
-    {{city}}
+    {{this.doubleCity}}
       <span class="iconfont arrow-icon">&#xe64a;</span>
   </div>
   </router-link>
@@ -17,15 +17,17 @@
 </template>
 
 <script>
+import {mapState,mapGetters} from 'Vuex'
 export default {
-  props:{
-    city:String
-  },
   data () {
     return {
   
     };
   },
+  computed:{
+    ...mapState(['city']),
+    ...mapGetters(['doubleCity'])
+  }
 
 }
 
@@ -54,9 +56,11 @@ export default {
        border-radius: .1rem
        color: #ccc
      .header-right
-       width: 1.24rem
+       min-width: 1.04rem
        float: right
+       padding-right:0 .1rem
        text-align: center
+       color: #fff
        .arrow-icon
          margin-left: -0.04rem
          font-size: .24rem

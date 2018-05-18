@@ -6,6 +6,7 @@ import router from './router'
 import fastClick from 'fastclick' //移动端click300毫秒执行
 //swiper轮播插件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store'
 //样式重置
 import 'styles/reset.css'
 //引入iconfont
@@ -27,6 +28,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App},
   template: '<App/>'
 })
