@@ -12,7 +12,7 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-           <div class="button-wrapper" v-for="item in hot" :key="item.id" @click="handleCityClick(item.name)">
+           <div class="button-wrapper" v-for="item in hot" :key="item.id" @tap="handleCityClick(item.name)">
               <div class="button">{{item.name}}</div>
             </div>
         </div>
@@ -48,7 +48,7 @@ export default {
   },
   mounted () {
     this.scroll =new BScroll(this.$refs.wrapper,{
-      click: true
+      tap:true
     })
   },
   watch:{
@@ -62,6 +62,7 @@ export default {
   },
   methods:{
     handleCityClick (city) {
+      console.log('AAAAAAAAAAAAAAAA')
       // this.$store.dispatch('changeCity',city)
       // this.$store.commit('changeCity',city)
       this.changeCity(city)
